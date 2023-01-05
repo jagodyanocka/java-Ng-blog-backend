@@ -2,6 +2,8 @@ debug: true
 server:
   port:
 spring:
+  config:
+    import: optional:file:.env[.properties]
   sql:
     init:
       platform: postgresql
@@ -11,16 +13,15 @@ spring:
       enabled: always
   datasource:
     driver-class-name:
-    url:
-    username:
-    password:
-
+    url: jdbc:postgresql://mouse.db.elephantsql.com/qxobjhuq
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     show-sql: true
     generate-ddl: true
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
 logging:
   level:
     org:
