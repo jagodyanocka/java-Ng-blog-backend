@@ -7,13 +7,16 @@ public class BlogUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
     @Column(name = "username", nullable = false)
     private String userName;
     @Column(name = "email", nullable = false)
     private String email;
     @Column(name = "password", nullable = false)
-    private String pass;
+    private String password;
+    @Column(name = "role")
+    private String role;
 
     public BlogUser() {}
 
@@ -21,7 +24,16 @@ public class BlogUser {
         this.id = id;
         this.userName = userName;
         this.email = email;
-        this.pass = password;
+        this.password = password;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Long getId() {
@@ -49,10 +61,10 @@ public class BlogUser {
     }
 
     public String getPassword() {
-        return pass;
+        return password;
     }
 
     public void setPassword(String password) {
-        this.pass = password;
+        this.password = password;
     }
 }

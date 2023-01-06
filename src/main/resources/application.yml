@@ -19,7 +19,7 @@ spring:
   jpa:
     show-sql: true
     generate-ddl: true
-    defer-datasource-initialization: true
+    defer-datasource-initialization:
     hibernate:
       ddl-auto: update
 logging:
